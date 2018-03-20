@@ -17,11 +17,8 @@ module.exports = class SpectreClient {
             method: 'POST',
             uri: spectre_url_post,
             formData: formData,
-        })
-            .then(JSON.parse)
-            .catch(function (error) {
-                console.log(error);
-            })
+            json: true
+        });
     }
 
     submitScreenshot(test_name, browser, size, screenshot, run_id, crop_area = '', source_url = '', fuzz_level = '', highlight_color = '') {
@@ -50,10 +47,7 @@ module.exports = class SpectreClient {
             method: 'POST',
             uri: spectre_url_post,
             formData: formData,
-        })
-            .then(JSON.parse)
-            .catch(function (error) {
-                console.log(error);
-            })
+            json: true
+        });
     }
 };
