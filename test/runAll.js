@@ -23,11 +23,11 @@ Promise
         return spectreClientInstance.createTestrun("Projekt", "Suite");
     })
     .then((result) => {
-        return spectreClientInstance.submitScreenshot("Testimage", "Edge", 480, screenshot1Base64, result.id)
+        return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot1Base64, result.id)
     })
     .then(() => {
         return spectreClientInstance.createTestrun("Projekt", "Suite");
     })
     .then((result) => {
-        return spectreClientInstance.submitScreenshot("Testimage", "Edge", 480, screenshot2Base64, result.id)
+        return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot2Base64, result.id)
     });
