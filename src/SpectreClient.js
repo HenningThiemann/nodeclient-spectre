@@ -7,8 +7,10 @@ module.exports = class SpectreClient {
         this.spectreURL = spectreURL;
     }
 
+
     createTestrun(projectName, suiteName) {
-        let spectre_url_post = this.spectreURL + '/runs';
+        //format spectre_url to send post request to /runs
+        let spectreUrlPost = this.spectreURL + '/runs';
 
         let formData = {
             project: projectName,
@@ -17,25 +19,27 @@ module.exports = class SpectreClient {
 
         return request({
             method: 'POST',
-            uri: spectre_url_post,
+            uri: spectreUrlPost,
             formData: formData,
             json: true
         });
     }
 
-    submitScreenshot(test_name, browser, size, screenshot, run_id, crop_area = '', source_url = '', fuzz_level = '', highlight_color = '') {
+
+    submitScreenshot(testName, browser, size, screenshot, runID, cropArea = '', sourceUrl = '', fuzzLevel = '', highlightColor = '') {
+
         //format spectre_url to send post request to /tests
-        let spectre_url_post = this.spectreURL + '/tests';
+        let spectreUrlPost = this.spectreURL + '/tests';
 
         const formData = {
-            'test[run_id]': run_id.toString(),
-            'test[name]': test_name,
+            'test[run_id]': runID.toString(),
+            'test[name]': testName,
             'test[browser]': browser,
             'test[size]': size.toString(),
-            'test[crop_area]': crop_area,
-            'test[source_url]': source_url,
-            'test[fuzz_level]': fuzz_level,
-            'test[highlight_color]': highlight_color,
+            'test[crop_area]': cropArea,
+            'test[source_url]': sourceUrl,
+            'test[fuzz_level]': fuzzLevel,
+            'test[highlight_color]': highlightColor,
             'test[screenshot]': {
                 options: {
                     filename: 'temp.png',
@@ -47,7 +51,7 @@ module.exports = class SpectreClient {
 
         return request({
             method: 'POST',
-            uri: spectre_url_post,
+            uri: spectreUrlPost,
             formData: formData,
             json: true
         });
