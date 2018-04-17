@@ -7,7 +7,7 @@ A node.js client to connect to the web application [Spectre](https://github.com/
 $ npm install nodeclient-spectre --save
 ```
 
-##Usage Example
+## Usage Example
 
 ```js
 const fs = require('fs');
