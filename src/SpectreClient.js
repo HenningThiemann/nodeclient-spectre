@@ -8,13 +8,14 @@ module.exports = class SpectreClient {
     }
 
 
-    createTestrun(projectName, suiteName) {
+    createTestrun(projectName, suiteName, options) {
         //format spectre_url to send post request to /runs
         let spectreUrlPost = this.spectreURL + '/runs';
 
         let formData = {
             project: projectName,
-            suite: suiteName
+            suite: suiteName,
+            ...options
         };
 
         return request({

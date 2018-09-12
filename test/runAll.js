@@ -48,4 +48,16 @@ Promise
     .then((result) => {
         console.log(result);
         return result;
+    })
+    .then(() => {
+        const options = {
+            branch_name: 'test-branch',
+            commit: 'ab13dce'
+        };
+
+        return spectreClientInstance.createTestrun("Projekt", "Suite", options);
+    })
+    .then((result) => {
+        console.log(result);
+        return result;
     });
