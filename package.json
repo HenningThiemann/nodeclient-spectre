@@ -1,6 +1,6 @@
 {
   "name": "nodeclient-spectre",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A node.js client to push data to the Web-Application \"spectre\" (https://github.com/wearefriday/spectre)",
   "main": "src/SpectreClient",
   "files": [
