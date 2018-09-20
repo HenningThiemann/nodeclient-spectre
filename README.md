@@ -42,16 +42,5 @@ Promise
     })
     .then((result) => {
         return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot2Base64, result.id)
-    })
-    .then(() => {
-        const options = {
-            branch_name: 'test-branch',
-            commit: 'ab13dce'
-        };
-
-        return spectreClientInstance.createTestrun("Projekt", "Suite", options);
-    })
-    .then((result) => {
-        return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot2Base64, result.id)
     });
 ```

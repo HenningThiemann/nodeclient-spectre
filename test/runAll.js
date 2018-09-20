@@ -20,44 +20,32 @@ const screenshot2Base64 = new Buffer(bitmap2).toString('base64');
 const spectreClientInstance = new SpectreClient(spectreUrl);
 
 Promise
-    .resolve()
-    .then(() => {
-        return spectreClientInstance.createTestrun("Projekt", "Suite");
-    })
-    .then((result) => {
-        console.log(result);
-        return result;
-    })
-    .then((result) => {
-        return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot1Base64, result.id)
-    })
-    .then((result) => {
-        console.log(result);
-        return result;
-    })
-    .then(() => {
-        return spectreClientInstance.createTestrun("Projekt", "Suite");
-    })
-    .then((result) => {
-        console.log(result);
-        return result;
-    })
-    .then((result) => {
-        return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot2Base64, result.id)
-    })
-    .then((result) => {
-        console.log(result);
-        return result;
-    })
-    .then(() => {
-        const options = {
-            branch_name: 'test-branch',
-            commit: 'ab13dce'
-        };
-
-        return spectreClientInstance.createTestrun("Projekt", "Suite", options);
-    })
-    .then((result) => {
-        console.log(result);
-        return result;
-    });
+        .resolve()
+        .then(() => {
+          return spectreClientInstance.createTestrun("Projekt", "Suite");
+        })
+        .then((result) => {
+          console.log(result);
+          return result;
+        })
+        .then((result) => {
+          return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot1Base64, result.id)
+        })
+        .then((result) => {
+          console.log(result);
+          return result;
+        })
+        .then(() => {
+          return spectreClientInstance.createTestrun("Projekt", "Suite");
+        })
+        .then((result) => {
+          console.log(result);
+          return result;
+        })
+        .then((result) => {
+          return spectreClientInstance.submitScreenshot("Testimage", "Testbrowser", 480, screenshot2Base64, result.id)
+        })
+        .then((result) => {
+          console.log(result);
+          return result;
+        });
